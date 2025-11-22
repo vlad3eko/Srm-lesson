@@ -1,13 +1,11 @@
 <template>
-  <aside class="">
-    <LayoutSidebar/>
-  </aside>
+  <div class="p-10 bg-background">
+    <h1 class="font-bold text-2xl mb-10">SRM system by RED GROUP</h1>
+  </div>
 </template>
 
 <script lang="ts" setup>
 
-import Sidebar from "~/components/layout/Sidebar.vue";
-import Menu from "~/components/layout/Menu.vue";
 </script>
 
 <style scoped>

@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <img src="/loader.svg" alt="loading">
+    <NuxtImg src="/loader.svg" alt="loading" class="max-w-[200px]"/>
   </div>
 </template>
 
@@ -9,7 +9,9 @@
 </script>
 
 <style scoped>
+@reference "tailwindcss";
+
 .wrapper {
-  @apply bg-sidebar flex items-center justify-center w-screen h-screen
+  @apply flex items-center justify-center w-screen h-screen
 }
 </style>

@@ -35,7 +35,6 @@ const isLoadingStore = useIsLoadingStore()
 const authStore = userAuthStore()
 const router = useRouter()
 
-
 // LOGIN
 const login = async () => {
   try {

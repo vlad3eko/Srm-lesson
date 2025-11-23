@@ -1,0 +1,5 @@
+Default:
+    login:
+        router redirect
+auth.store.ts:
+    user.status = false

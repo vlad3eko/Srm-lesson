@@ -10,7 +10,7 @@ export const MENU_DATA: IMenuItem[] = [
         url: '/',
         icon: 'radix-icons:dashboard',
     },
-   /* {
+    {
         name: 'Products',
         url: '/products',
         icon: 'ep:goods',
@@ -44,5 +44,5 @@ export const MENU_DATA: IMenuItem[] = [
         name: 'Questions',
         url: '/questions',
         icon: 'radix-icons:question-mark',
-    },*/
+    },
 ]

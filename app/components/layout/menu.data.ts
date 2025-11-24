@@ -42,7 +42,7 @@ export const MENU_DATA: IMenuItem[] = [
     },
     {
         name: 'Questions',
-        url: '/questions',
+        url: '/help',
         icon: 'radix-icons:question-mark',
     },
 ]

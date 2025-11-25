@@ -8,6 +8,7 @@
           <div class="rounded bg-slate-700 py-1 px-5 mb-2 text-center">
             {{ column.name }}
           </div>
+          <KanbanCreateDeal :refetch="refetch" :status="column.id"/>
           <VCard v-for="card in column.items" class="mb-3" draggable="true">
             <VCardHeader role="button">
               {{ card.name }}
@@ -16,7 +17,7 @@
               {{ convertCurrency(card.price) }}
             </VCardDescription>
             <VCardContent>
-              Компания
+              <div> Компания</div>
               {{ card.companyName }}
             </VCardContent>
             <VCardFooter>

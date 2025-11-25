@@ -9,23 +9,29 @@ export default defineNuxtConfig({
         },
     },
     modules: [
-      '@nuxt/ui',
-      '@nuxtjs/tailwindcss',
-      'shadcn-nuxt',
-      '@nuxt/image',
-      '@nuxt/icon',
-      '@pinia/nuxt',
-      [
-          '@nuxtjs/google-fonts',
-          {
-              families: {
-                  Lato: {
-                      wght: [300, 400, 700],
-                      ital: [300],
-                  },
-              },
-          },
-      ],
+        '@nuxt/ui',
+        '@nuxtjs/tailwindcss',
+        'shadcn-nuxt',
+        '@nuxt/image',
+        '@nuxt/icon',
+        '@pinia/nuxt',
+        [
+            '@vee-validate/nuxt',
+            {
+                autoImports: true,
+            }
+        ],
+        [
+            '@nuxtjs/google-fonts',
+            {
+                families: {
+                    Lato: {
+                        wght: [300, 400, 700],
+                        ital: [300],
+                    },
+                },
+            },
+        ],
     ],
     "ui": {
         "fonts": false

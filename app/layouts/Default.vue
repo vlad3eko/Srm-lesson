@@ -24,14 +24,12 @@ onMounted(async () => {
       store.set(user)
     }
   } catch (error) {
-    console.log('Component Default, not auth')
+    console.log('Not auth')
     return router.push('/login')
   } finally {
     isLoadingStore.set(false)
   }
 })
-
-console.log('auth', store.isAuth)
 
 </script>
 

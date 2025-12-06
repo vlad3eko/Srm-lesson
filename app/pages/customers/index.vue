@@ -1,11 +1,49 @@
 <template>
   <div class="p-10">
-  <h1 class="font-bold text-2xl mb-10">
-    Наши клиенты
-  </h1>
+    <h1 class="font-bold text-2xl mb-10">
+      Наши клиенты
+    </h1>
     <div v-if="isLoading">Loading...</div>
-    <div v-else>
-    </div>
+    <VTable v-else>
+
+      <VTableHeader>
+        <VTableRow>
+          <VTableHead class="w-[80px] text-center">Изображение</VTableHead>
+          <VTableHead class="w-[300px]">Наименование</VTableHead>
+          <VTableHead class="w-[300px]">Email</VTableHead>
+          <VTableHead>Откуда пришёл</VTableHead>
+        </VTableRow>
+      </VTableHeader>
+
+      <VTableBody>
+        <VTableRow
+            v-for="customer in customers"
+            :key="customer.$id">
+          <VTableCell>
+            <NuxtLink :href='`/customers/edit/${customer.$id}`'>
+              <NuxtImg
+                  :src="customer.avatar_url"
+                  :alt="customer.name"
+                  width="50"
+                  height="50"
+                  class="rounded-full mx-auto"
+              />
+            </NuxtLink>
+          </VTableCell>
+          <VTableCell
+              class="font-medium">
+            {{ customer.name }}
+          </VTableCell>
+          <VTableCell>
+            {{ customer.email }}
+          </VTableCell>
+          <VTableCell>
+            {{ customer?.from_source }}
+          </VTableCell>
+        </VTableRow>
+      </VTableBody>
+
+    </VTable>
   </div>
 </template>
 

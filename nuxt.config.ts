@@ -10,7 +10,6 @@ export default defineNuxtConfig({
     },
     modules: [
         '@nuxt/ui',
-        '@nuxtjs/tailwindcss',
         'shadcn-nuxt',
         '@nuxt/image',
         '@nuxt/icon',
@@ -33,6 +32,7 @@ export default defineNuxtConfig({
             },
         ],
     ],
+    css: ['@/assets/css/main.css'],
     "ui": {
         "fonts": false
     },

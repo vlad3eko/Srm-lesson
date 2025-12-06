@@ -1,5 +1,5 @@
 <template>
-  <aside class="px-5 py-8 bg-secondary h-full relative w-full border-r">
+  <aside class="px-5 py-8 bg-gray-900 h-full relative w-full border-r border-gray-600">
     <NuxtLink to="/" class="mb-10 block">
       <NuxtImg src="/logo.svg" alt="logo" width="150px" class="mx-auto"/>
     </NuxtLink>

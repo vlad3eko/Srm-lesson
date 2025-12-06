@@ -1,4 +1,4 @@
-import type {EnumStatus} from '~/types/deals.types'
+import type {EnumStatus, IComment} from '~/types/deals.types'
 
 export interface ICard {
     id: string
@@ -14,3 +14,5 @@ export interface IColumn {
     name: string
     items: ICard[]
 }
+
+

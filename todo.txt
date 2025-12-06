@@ -3,3 +3,13 @@ Default:
         router redirect
 auth.store.ts:
     user.status = false
+
+
+//
+нет массива comments в обекте карточки
+
+Здесь получаю объект карточки:
+useComments()
+
+тут есть:
+queryFn: () => DB.listDocuments(DB_ID, COLLECTION_DEALS, [], "customer"),

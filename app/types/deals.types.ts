@@ -11,7 +11,8 @@ export interface ICustomer extends IBaseField {
 }
 
 export interface IComment extends IBaseField {
-    text: string
+    text: string,
+    dealId: string
 }
 
 export enum EnumStatus {

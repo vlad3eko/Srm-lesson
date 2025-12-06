@@ -1,6 +1,7 @@
 import {useQuery} from "@tanstack/vue-query";
 import {KANBAN_DATA} from "~/components/kanban/kanban.data";
 import {EnumStatus, type IDeal} from "~/types/deals.types";
+import type {IColumn} from "~/components/kanban/kanban.types";
 
 export function useKanbanQuery() {
 
@@ -8,9 +9,7 @@ export function useKanbanQuery() {
         queryKey: ['deals'],
         queryFn: () => DB.listDocuments(DB_ID, COLLECTION_DEALS, [], "customer"),
         select(data) {
-            // const newBoard = [...KANBAN_DATA]
-
-            const newBoard: { id: EnumStatus; name: string; items: any[] }[] = KANBAN_DATA.map(column => ({
+            const newBoard: IColumn[] = KANBAN_DATA.map(column => ({
                 ...column,
                 items: []
             }))

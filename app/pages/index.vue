@@ -18,26 +18,32 @@
             {{ column.name }}
           </div>
           <KanbanCreateDeal :refetch="refetch" :status="column.id"/>
-          <VCard
-              v-for="card in column.items"
-              class="mb-5"
-              draggable="true"
-              @dragstart="() => handlerDragStart(card, column)"
-          >
-            <VCardHeader role="button">
-              {{ card.name }}
-            </VCardHeader>
-            <VCardDescription>
-              {{ convertCurrency(card.price) }}
-            </VCardDescription>
-            <VCardContent>
-              <div> Компания</div>
-              {{ card.companyName }}
-            </VCardContent>
-            <VCardFooter>
-              {{ dayjs(card.$createdAt).format('DD MMMM YYYY') }}
-            </VCardFooter>
-          </VCard>
+
+          <KanbanSlideover>
+            <VCard
+                v-for="card in column.items"
+                class="cursor-pointer"
+                draggable="true"
+                @dragstart="() => handlerDragStart(card, column)"
+                @click="store.set(card)"
+            >
+              <VCardHeader role="button">
+                <VCardTitle>
+                  {{ card.name }}
+                </VCardTitle>
+              </VCardHeader>
+              <VCardDescription>
+                {{ convertCurrency(card.price) }}
+              </VCardDescription>
+              <VCardContent>
+                <div> Компания</div>
+                {{ card.companyName }}
+              </VCardContent>
+              <VCardFooter>
+                {{ dayjs(card.$createdAt).format('DD MMMM YYYY') }}
+              </VCardFooter>
+            </VCard>
+          </KanbanSlideover>
         </div>
       </div>
     </div>
@@ -52,15 +58,17 @@ import dayjs from "dayjs";
 import {useMutation} from "@tanstack/vue-query";
 import {COLLECTION_DEALS, DB_ID} from "~/utils/app.constants";
 import {generateColumnStyle} from "~/components/kanban/generate-gradient";
+import {useDealSlideStore} from "~/store/deal-slide.store";
 
 useSeoMeta({
   title: 'HOME | CRM'
 })
 
-const {data, isLoading, refetch} = useKanbanQuery()
 
 const dragCardRef = ref<ICard | null>(null)
 const sourceColumnRef = ref<IColumn | null>(null)
+const {data, isLoading, refetch} = useKanbanQuery()
+const store = useDealSlideStore()
 
 
 type TypeMutationVariables = {

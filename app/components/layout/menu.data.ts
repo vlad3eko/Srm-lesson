@@ -1,7 +1,7 @@
 export interface IMenuItem {
-    name: String,
-    url: String,
-    icon: String
+    name: string,
+    url: string,
+    icon: string
 }
 
 export const MENU_DATA: IMenuItem[] = [
@@ -42,7 +42,7 @@ export const MENU_DATA: IMenuItem[] = [
     },
     {
         name: 'Questions',
-        url: '/questions',
+        url: '/help',
         icon: 'radix-icons:question-mark',
     },
 ]

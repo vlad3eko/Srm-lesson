@@ -17,12 +17,12 @@
 
     --border: #202937;
     --input: #202937;
-    --sidebar: #0e172a;
+    --sidebar: #9cc3ff;
 
     --primary: #a252c8;
     --primary-foreground: #f5f5f5;
 
-    --secondary: #202937;
+    --secondary: #0A162A;
     --secondary-foreground: #dad8d8;
 
     --accent: 221.5 30.2% 91.6%;
@@ -36,8 +36,6 @@
     --radius: 0.5rem;
 }
 
-/*Dark*/
-/*
 .dark {
     --background: oklch(0.145 0 0);
     --foreground: oklch(0.985 0 0);
@@ -71,7 +69,6 @@
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.556 0 0);
 }
-*/
 
 @theme inline {
     --radius-sm: calc(var(--radius) - 4px);
